@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Welcome</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>Work in progress</h1>
+        <!-- Include content from the specific page -->
+        <div th:replace="~{content :: content}"></div>
+    </div>
+
+    <div layout:fragment="footer">
+        <h5 style="color: Black; text-align: center; position: fixed; bottom: 0; width: 100%;">My App Testing Site</h5>
+    </div>
+</body>
+</html>
