@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="${title}">Welcome</title>
-</head>
-<body>
-    <div layout:fragment="content">
-        <h1>Work in progress</h1>
-        <!-- Include content from the specific page -->
-        <div th:replace="~{content :: content}"></div>
-    </div>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
 
-    <div layout:fragment="footer">
-        <h5 style="color: Black; text-align: center; position: fixed; bottom: 0; width: 100%;">My App Testing Site</h5>
+<head>
+    <title>About Page</title>
+</head>
+
+<body>
+    <div align="center">
+        <!-- Insert Header Fragment -->
+        <div th:replace="~{layouts/common :: header}">My Header</div>
+
+        <!-- Main Body Content -->
+        <section layout:fragment="content">
+        <img th:src="@{/Images/CloudPic1.jpg}" style="height: 200px;"/>
+        	</br></br></br>
+            <h1>About The Cloud</h1>
+            <p>This page is about the cloud website. The site includes four pages. It has a home page, login page, test data page, and about page. 
+            The buttons on the navbar will lead the user to all pages on this site. </br> The start page button will take you back to the login. After login the user will be led to the test data page. </p>
+        </section>
+
+        <!-- Insert Footer Fragment -->
+        <div th:replace="~{layouts/common :: footer}">My Footer</div>
     </div>
 </body>
+
 </html>
